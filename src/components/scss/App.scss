@@ -3,7 +3,10 @@
 @import "./utilities";
 @import "./breakpoints";
 
-@import "./Header-components/header";
-@import "./Header-components/navbar-middle-links";
-@import "./Header-components/mobile-menu";
-@import "./Header-components/navbar-right-links";
+// Header SCSS
+@import "./Header-scss/header";
+@import "./Header-scss/navbar-middle-links";
+@import "./Header-scss/mobile-menu";
+@import "./Header-scss/navbar-right-links";
+
+@import "./Showcase.scss/Showcase";
