@@ -1,0 +1,63 @@
+.hamburger-icon {
+    
+    position: absolute;
+
+    &.is-active {
+
+        span:first-child {
+            transform: translateY(0.5rem) rotate(45deg);
+            
+        }
+        
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:last-child {
+            transform: translateY(-0.5rem) rotate(-45deg);
+        }
+        
+    }
+    .bar {
+        display: block;
+        right: 1rem;
+        width: 1.5rem;
+        height: 0.2rem;
+        margin: 0.3rem 0;
+        background-color: $color-dark-20;
+        transition: 0.3s ease-in-out;
+        
+        @include lg {
+            display: none;
+        }
+        
+    }
+}
+
+.hamburger-menu {
+    display: block;
+    position: fixed;
+    top: 5.5rem;
+    right: 100%;
+    width: 70%;
+    min-height: 100vh;
+    z-index: 1;
+    background-color: $color-gray-10;
+    transition: 0.3s ease-in-out;
+
+    &.is-active {
+        right: 30%;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 2rem;
+        color: $color-dark-20;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            color: $color-theme-red;
+        }
+    }
+}
