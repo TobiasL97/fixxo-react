@@ -1,0 +1,12 @@
+.promo {
+
+    margin-top: 2rem;
+
+    > .container {
+
+        @include lg {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

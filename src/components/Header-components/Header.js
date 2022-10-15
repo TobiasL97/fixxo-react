@@ -1,7 +1,7 @@
 import React from 'react'
 import NavbarMiddleLinks from './NavbarMiddleLinks'
 import NavbarRightLinks from './NavbarRightLinks'
-import fixxoLogo from './Images/fixxo-icon.svg'
+import fixxoLogo from '../Assets/Images/fixxo-icon.svg'
 import MobileMenu from './MobileMenu'
 
 const Header = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
-import girlOnChair from './Images/girl-on-chair.svg'
-import personInCoat from './Images/person-in-coat.svg'
-import ButtonTheme from '../components/Assets/Images/ButtonTheme'
+import girlOnChair from '../Assets/Images/girl-on-chair.svg'
+import personInCoat from '../Assets/Images/person-in-coat.svg'
+import ButtonTheme from '../Assets/ButtonTheme'
 
 const Showcase = () => {
   return (
