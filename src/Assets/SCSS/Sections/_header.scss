@@ -1,6 +1,6 @@
 header {
-    background-color: $color-gray-10;
     position: relative;
+    background-color: $color-gray-10;
 }
     .__navbar {
         padding: 1rem 1rem 1rem 1rem;
@@ -97,7 +97,6 @@ header {
     .navbar-middle-links {
 
         display: none;
-        margin-left: 6rem;
 
         @include lg{
             display: inline;
@@ -109,6 +108,10 @@ header {
             transition: 0.2s ease-in-out;
 
             &:hover {
+                color: $color-theme-red;
+            }
+
+            &:is-active {
                 color: $color-theme-red;
             }
         }

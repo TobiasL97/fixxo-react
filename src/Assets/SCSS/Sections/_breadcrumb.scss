@@ -1,0 +1,35 @@
+.__breadcrumb {
+    text-align: end;
+    padding: 7rem 0 0 0;
+    margin-bottom: 3rem;
+
+    @include lg {
+        text-align: start;
+        padding: 4rem 0 0 0;
+        margin-bottom: 3rem;
+    }
+
+    .breadcrumb-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    
+        li {
+            display: inline-block;
+            font-weight: $font-weight-medium;
+    
+            .breadcrumb-text {
+                color: $color-dark-10;
+                margin-right: 0.4rem;
+
+                &:is-active {
+                    color: $color-theme-red;
+                }
+            }
+    
+            & + li:before {
+                content:"/\00a0"
+            }
+        }
+    }
+}
