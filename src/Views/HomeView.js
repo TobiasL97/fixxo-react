@@ -8,6 +8,7 @@ import TwoFor29 from '../Sections/TwoFor29'
 import TwoFor49 from '../Sections/TwoFor49'
 import CompanyService from '../Sections/CompanyService'
 import Footer from '../Sections/Footer'
+import ProductGrid from '../Sections/ProductGrid'
 
 const HomeView = () => {
   return (
@@ -15,6 +16,7 @@ const HomeView = () => {
       <Header />
       <ShowCase />
       <Promo />
+      <ProductGrid />
       <Promo2 />
       <OurSpeciality />
       <TwoFor29 />

@@ -224,6 +224,12 @@
             .button-theme-category-box {
                 opacity: 100;
             }
+
+            .menu-icon {
+                background-color: $color-gray-30;
+                padding: 0;
+            }
+
         }   
 
         .content-menu {
@@ -235,21 +241,78 @@
             opacity: 0;
             transition: 0.2s ease-in-out;
 
-            a:hover {
-                i {
-                    background-color: $color-dark-20;
-                    color: white;
-                }
-
-            }
-
-            i {
+            .menu-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
                 background-color: white;
                 color: $color-dark-20;
                 border-radius: 50%;
-                padding: 0.6rem;
+                height: 36px;
+                width: 36px;
                 margin-top: 0.7rem;
                 font-size: $font-size-16;
+                transition: 0.2s ease-in-out;
+                align-items: center;
+
+                &:hover {
+                    background-color: $color-dark-20;
+                    color: white;
+                }
+            }
+        }
+
+        .button-theme-category-box {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 25%;
+            text-align: center;
+            padding: 15px 0;
+            color: white;
+            background-color: $color-theme-red;
+            font-weight: $font-weight-semibold;
+            opacity: 0;
+            transition: 0.2s ease-in-out;
+    
+            &:hover {
+    
+                &:hover {
+                    color: $color-dark-10;
+    
+                    .button-theme-left {
+                        border-left: 2px solid $color-dark-10;
+                        border-top: 2px solid $color-dark-10;
+                    }
+    
+                    .button-theme-right {
+                        border-right: 2px solid $color-dark-10;
+                        border-bottom: 2px solid $color-dark-10;
+                    }
+                }
+            }
+        
+            .button-theme-left,
+            .button-theme-right {
+                position: absolute;
+                height: 20px;
+                width: 20px;
+            }
+        
+            .button-theme-left {
+                top: 10px;
+                left: 10px;
+                border-left: 2px solid white;
+                border-top: 2px solid white;
+                transition: 0.2s ease-in-out;
+            }
+        
+            .button-theme-right {
+                bottom: 10px;
+                right: 10px;
+                border-right: 2px solid white;
+                border-bottom: 2px solid white;
                 transition: 0.2s ease-in-out;
             }
         }
@@ -306,60 +369,6 @@
                     font-size: $font-size-18;
                 }
             }
-        }
-    }
-
-    .button-theme-category-box {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 25%;
-        text-align: center;
-        padding: 15px 0;
-        color: white;
-        background-color: $color-theme-red;
-        font-weight: $font-weight-semibold;
-        opacity: 0;
-        transition: 0.2s ease-in-out;
-
-        &:hover {
-
-            &:hover {
-                color: $color-dark-10;
-
-                .button-theme-left {
-                    border-left: 2px solid $color-dark-10;
-                    border-top: 2px solid $color-dark-10;
-                }
-
-                .button-theme-right {
-                    border-right: 2px solid $color-dark-10;
-                    border-bottom: 2px solid $color-dark-10;
-                }
-            }
-        }
-    
-        .button-theme-left,
-        .button-theme-right {
-            position: absolute;
-            height: 20px;
-            width: 20px;
-        }
-    
-        .button-theme-left {
-            top: 10px;
-            left: 10px;
-            border-left: 2px solid white;
-            border-top: 2px solid white;
-            transition: 0.2s ease-in-out;
-        }
-    
-        .button-theme-right {
-            bottom: 10px;
-            right: 10px;
-            border-right: 2px solid white;
-            border-bottom: 2px solid white;
-            transition: 0.2s ease-in-out;
         }
     }
 }
