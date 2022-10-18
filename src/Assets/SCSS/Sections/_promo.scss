@@ -90,7 +90,7 @@
                 position: absolute;
                 left: 5%;
                 top: 65%;
-                font-size: 3vw;
+                font-size: $font-size-13;
                 padding: 4vw 8vw;
         
                 @include sm {
@@ -200,7 +200,7 @@
                 position: absolute;
                 left: 5%;
                 top: 65%;
-                font-size: 3vw;
+                font-size: $font-size-13;
                 padding: 4vw 8vw;
         
                 @include sm {

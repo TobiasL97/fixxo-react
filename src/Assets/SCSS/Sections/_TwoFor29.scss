@@ -1,0 +1,134 @@
+.shopping-grid {
+
+    margin-top: 2rem;
+
+    @include lg {
+        display: flex;
+        margin-top: 4rem;
+    }
+
+    .offer {
+        background-color: $color-gray-40;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+
+        @include lg {
+            width: 50%;
+            height: 664px;
+            margin-right: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .offer-content {
+
+            > .button-theme-light {
+                padding: 1rem 2rem;
+    
+                @include lg {
+                    padding: 20px 50px;
+                }
+            }
+    
+            h1 {
+                color: white;
+                font-weight: $font-weight-bold;
+                font-size: $font-size-35;
+                margin-bottom: 1rem;
+                margin-top: 0;
+
+                @include lg {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+
+    .product-grid {
+
+        margin-top: 1rem;
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 323px);
+        gap: 2rem;
+    
+        @include md {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 323px);
+        }
+        
+        @include lg {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 323px);
+            margin-top: 0rem;
+        }
+
+        @include xl {
+            grid-template-columns: repeat(2, 200px);
+        }
+
+        @include xxl {
+            @include xl {
+                grid-template-columns: repeat(2, 255px);
+            }
+        }
+
+        > .category-box {
+            
+        
+            > .category-box-text {
+                padding-top: 0.5rem;
+                text-align: start;
+        
+                > p {
+                    font-size: 0.7rem;
+                    font-weight: $font-weight-medium;
+                    margin: 0;
+                    color: $color-gray-50;
+                    text-align: start;
+        
+                    @include md {
+                        font-size: $font-size-13;
+                    }
+                }
+        
+                h1 {
+                    font-size: $font-size-14;
+                    font-weight: $font-weight-semibold;
+                    margin: 0.3rem 0;
+                    color: $color-dark-10;
+        
+                    @include md {
+                        font-size: $font-size-16;
+                    }
+                }
+        
+                .price {
+                    margin-top: 0.2rem;
+                    display: inline;
+        
+                    > .original-price {
+                        font-size: $font-size-14;
+                        margin-right: 0.5rem;
+                        display: none;
+        
+                        @include md {
+                            font-size: $font-size-16;
+                        }
+                    }
+                    
+                    > .new-price {
+                        font-size: $font-size-16;
+        
+                        @include md {
+                            font-size: $font-size-18;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -16,9 +16,9 @@ const Promo2 = () => {
                 </div>
             </div>
 
-            <div class="lets-be-conscious flex c-end">
+            <div className="lets-be-conscious flex c-end">
                 <img src={LetsBeConscious} alt="Mountain-of-clothes" />
-                <div class="lets-be-conscious-content">
+                <div className="lets-be-conscious-content">
                     <h1>Let's be<span>Conscious</span></h1>
                     <ButtonThemeLight text="SHOP NOW"/>
                 </div>

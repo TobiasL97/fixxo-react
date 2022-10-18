@@ -108,13 +108,8 @@
                     .button-theme-left,
                     .button-theme-right {
                         position: absolute;
-                        height: 10px;
-                        width: 10px;
-        
-                        @include sm {
-                            height: 15px;
-                            width: 15px;
-                        }
+                        height: 15px;
+                        width: 15px;
         
                         @include md {
                             height: 20px;
@@ -283,13 +278,8 @@
                     .button-theme-left,
                     .button-theme-right {
                         position: absolute;
-                        height: 10px;
-                        width: 10px;
-        
-                        @include sm {
-                            height: 15px;
-                            width: 15px;
-                        }
+                        height: 15px;
+                        width: 15px;
         
                         @include md {
                             height: 20px;
