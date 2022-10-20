@@ -9,20 +9,60 @@ import TwoFor49 from '../Sections/TwoFor49'
 import CompanyService from '../Sections/CompanyService'
 import Footer from '../Sections/Footer'
 import ProductGrid from '../Sections/ProductGrid'
+import { useState } from 'react'
+import Sale from '../Sections/Sale'
 
 const HomeView = () => {
+
+  const [products, setProducts] = useState([
+    { id : 1, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 2, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 3, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 4, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 5, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 6, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 7, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 8, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"}
+  ])
+
+  const [TwoFor29Products, setTwoFor29Products] = useState([
+    { id : 1, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 2, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 3, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 4, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+
+  ])
+
+  const [TwoFor49Products, setTwoFor49Products] = useState([
+    { id : 1, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 2, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 3, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+    { id : 4, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
+
+  ])
+
+  const [saleProducts, setSaleProducts] = useState([
+    {id: 1, category: "fashion", name: "Modern Blue Blouse", price: "$35.00"},
+    {id: 2, category: "fashion", name: "Modern Blue Blouse", price: "$35.00"},
+    {id: 3, category: "fashion", name: "Modern Blue Blouse", price: "$35.00"},
+    {id: 3, category: "fashion", name: "Modern Blue Blouse", price: "$35.00"}
+  ])
+  
+
   return (
     <>
       <Header />
       <ShowCase />
       <Promo />
-      <ProductGrid />
+      <ProductGrid title="Featured Products" products={products}/>
       <Promo2 />
       <OurSpeciality />
-      <TwoFor29 />
-      <TwoFor49 />
+      <TwoFor29 TwoFor29Products={TwoFor29Products}/>
+      <TwoFor49 TwoFor49Products={TwoFor49Products}/>
+      <Sale saleProducts={saleProducts}/>
       <CompanyService />
       <Footer />
+    
     </>
     
   )

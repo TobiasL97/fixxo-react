@@ -1,20 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const MobileMenu = () => {
+
+  const [showMenu, setShowMenu] = useState(false)
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu)
+  }
+
+  const closeMenu = () => {
+    setShowMenu(false)
+  }
   return (
     <div className="Mobile-Menu">
-        <NavLink to="#" onclick="mobileMenu()" className="hamburger-icon">
+        <div onClick={toggleMenu} className={`hamburger-icon ${!showMenu ? "is-active": ""}`}>
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
-        </NavLink>
+        </div>
 
-        <nav className="hamburger-menu">
-            <NavLink to="/home">Home</NavLink>
-            <NavLink to="/categories">Categories</NavLink>
-            <NavLink to="/products">Products</NavLink>
-            <NavLink to="/contacts">Contacts</NavLink>
+        <nav  onClick={toggleMenu} className={`hamburger-menu ${!showMenu ? "is-active": ""}`}>
+            <NavLink onClick={closeMenu} className="mobile-menu-link" to="/home" >Home</NavLink>
+            <NavLink onClick={closeMenu} className="mobile-menu-link" to="/categories">Categories</NavLink>
+            <NavLink onClick={closeMenu} className="mobile-menu-link" to="/products">Products</NavLink>
+            <NavLink onClick={closeMenu} className="mobile-menu-link" to="/contacts">Contacts</NavLink>
         </nav>
     </div>
   )

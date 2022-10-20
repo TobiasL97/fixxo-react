@@ -14,7 +14,7 @@ const Promo = () => {
                 <ButtonThemeDark text="SHOP NOW"/>
             </div>
 
-            <div class="new-arrivals-promo">
+            <div className="new-arrivals-promo">
                 <img className="leaning-boy" src={LeaningBoy} alt="Leaning-boy" />
                 <h1>NEW<span>Arrivals</span></h1>
                 <ButtonThemeDark text="SHOP NOW"/>

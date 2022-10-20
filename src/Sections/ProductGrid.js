@@ -1,19 +1,15 @@
 import React from 'react'
-import CategoryBox from '../Components/CategoryBox'
+import ProductBox from '../Components/ProductBox'
 
-const ProductGrid = () => {
+const ProductGrid = ({title, products}) => {
+
   return (
     <section className="product-grid">
-        <h1>Featured Products</h1>
+        <h1>{title}</h1>
         <div className="container-small grid">
-            <CategoryBox  Title="Category" Header="Modern black blouse"/>
-            <CategoryBox  Title="Category" Header="Modern black blouse"/>
-            <CategoryBox  Title="Category" Header="Modern black blouse"/>
-            <CategoryBox  Title="Category" Header="Modern black blouse"/>
-            <CategoryBox  Title="Category" Header="Modern black blouse"/>
-            <CategoryBox  Title="Category" Header="Modern black blouse"/>
-            <CategoryBox  Title="Category" Header="Modern black blouse"/>
-            <CategoryBox  Title="Category" Header="Modern black blouse"/>
+            {
+              products.map(product => <ProductBox key={product.id} product={product}/>)
+            }
         </div>
     </section>
   )

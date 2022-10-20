@@ -1,14 +1,14 @@
-header {
+header{
     position: relative;
     background-color: $color-gray-10;
 }
     .__navbar {
-        padding: 1rem 1rem 1rem 1rem;
+        position: fixed;
+        padding: 1rem 1rem;
         align-items: center;
         font-size: $font-size-16;
         font-weight: $font-weight-medium;
         background-color: $color-gray-10;
-        position: fixed;
         width: 100%;
         z-index: 1;
         left: 0;
@@ -50,7 +50,7 @@ header {
                     background-color: $color-dark-20;
                     transition: 0.3s ease-in-out;
                     
-                    @include lg {
+                    @include md {
                         display: none;
                     }
                     
@@ -58,26 +58,29 @@ header {
             }
         
             .hamburger-menu {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: fixed;
-                top: 5.5rem;
+                top: 5rem;
                 right: 100%;
-                width: 70%;
-                min-height: 100vh;
-                z-index: 1;
-                background-color: $color-gray-10;
+                width: 100%;
+                padding: 0.5rem 0 0.5rem 0rem;
+                background-color: $color-gray-20;
+                opacity: 95%;
                 transition: 0.3s ease-in-out;
-        
+
                 &.is-active {
-                    right: 30%;
+                    right: 0;
                 }
+
         
-                a {
+                .mobile-menu-link {
                     display: block;
                     text-align: center;
-                    margin-top: 2rem;
                     color: $color-dark-20;
                     transition: 0.2s ease-in-out;
+                    margin: 0 0.5rem;
         
                     &:hover {
                         color: $color-theme-red;
@@ -98,14 +101,19 @@ header {
 
         display: none;
 
-        @include lg{
+        @include md{
             display: inline;
         }
 
         a {
-            margin: 1rem;
+            margin: 0.5rem;
             color: $color-dark-20;
             transition: 0.2s ease-in-out;
+
+            @include lg {
+
+                margin: 1 rem;
+            }
 
             &:hover {
                 color: $color-theme-red;

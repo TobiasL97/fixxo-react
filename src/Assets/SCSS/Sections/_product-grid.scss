@@ -10,20 +10,24 @@
     }
 
     .container-small {
-    
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 323px);
+        justify-content: center;
+        grid-template-columns: 255px;
+        grid-template-rows: repeat(8, 323px);
         gap: 2rem;
 
         @include sm {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 255px);
+            grid-template-rows: repeat(4, 323px);
+        }
+
+        @include lg {
+            grid-template-columns: repeat(3, 255px);
             grid-template-rows: repeat(3, 323px);
         }
-        
-        @include lg {
-            grid-template-columns: repeat(4, 1fr);
+
+        @include xl {
+            grid-template-columns: repeat(4, 255px);
             grid-template-rows: repeat(2, 323px);
         }
-    
     }
 }

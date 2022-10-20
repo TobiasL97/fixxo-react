@@ -1,6 +1,5 @@
 .showcase {
-    padding-top: 6rem;
-    padding-bottom: 2rem;
+    padding: 6rem 1rem 2rem 1rem;
     background-color: $color-gray-10;
 
     @include sm {
@@ -11,7 +10,7 @@
         padding-top: 0rem;
     }
 
-    > .container {
+    .container {
         align-items: center;
         text-align: center;
 
