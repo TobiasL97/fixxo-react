@@ -25,7 +25,7 @@ const CategoryBox = ({product}) => {
             </NavLink>
             <div className="content-menu">
                 <button onClick={addToFavourites} className="menu-icon"><i className="fa-regular fa-heart"></i></button>
-                <button onClick={addToCompare} className="menu-icon"><i className="fa-regular fa-shuffle"></i></button>
+                <button onClick={addToCompare} className="menu-icon"><i className="fa-regular fa-code-compare"></i></button>
                 <button onClick={addToCart} className="menu-icon"><i className="fa-regular fa-bag-shopping"></i></button>
             </div>
         </div>

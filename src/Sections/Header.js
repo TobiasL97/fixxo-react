@@ -14,10 +14,10 @@ const Header = () => {
               <NavLink className="fixxo-logo"><img src={FixxoLogo} alt="Fixxo-Logo"/></NavLink>
 
               <div className="navbar-middle-links">
-                  <NavLink to="/home">Home</NavLink>
-                  <NavLink to="/categories">Categories</NavLink>
-                  <NavLink to="/products">Products</NavLink>
-                  <NavLink to="/contacts">Contacts</NavLink>
+                  <NavLink className="navbar-middle-link" to="/home" end>Home</NavLink>
+                  <NavLink className="navbar-middle-link" to="/categories" end>Categories</NavLink>
+                  <NavLink className="navbar-middle-link" to="/products" end>Products</NavLink>
+                  <NavLink className="navbar-middle-link" to="/contacts" end>Contacts</NavLink>
               </div>
 
               <div className="navbar-icons">

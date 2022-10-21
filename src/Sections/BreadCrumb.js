@@ -7,7 +7,7 @@ const BreadCrumb = () => {
         <div className="container-small">
             <ul className="breadcrumb-list">
                 <li><NavLink className="breadcrumb-text" to="/home">Home</NavLink></li>
-                <li>Contacts</li>
+                <li><NavLink className="breadcrumb-text" to="/contacts">Contacts</NavLink></li>
             </ul>
         </div>
     </section>

@@ -21,10 +21,10 @@
             .breadcrumb-text {
                 color: $color-dark-10;
                 margin-right: 0.4rem;
+            }
 
-                &:is-active {
-                    color: $color-theme-red;
-                }
+            .active {
+                color: $color-theme-red;
             }
     
             & + li:before {

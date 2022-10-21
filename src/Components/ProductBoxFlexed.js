@@ -12,7 +12,7 @@ const ProductBoxFlexed = ({saleProduct}) => {
             </NavLink>
             <div className="product-box-flexed-content-menu">
                 <button className="menu-icon"><i className="fa-regular fa-heart"></i></button>
-                <button className="menu-icon"><i className="fa-regular fa-shuffle"></i></button>
+                <button className="menu-icon"><i className="fa-regular fa-code-compare"></i></button>
                 <button className="menu-icon"><i className="fa-regular fa-bag-shopping"></i></button>
             </div>
         </div>

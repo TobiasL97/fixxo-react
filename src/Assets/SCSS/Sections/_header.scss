@@ -105,51 +105,56 @@ header{
             display: inline;
         }
 
-        a {
+        @include lg {
+            margin-left: 6rem;
+        }
+
+        .navbar-middle-link {
             margin: 0.5rem;
             color: $color-dark-20;
             transition: 0.2s ease-in-out;
 
             @include lg {
 
-                margin: 1 rem;
+                margin: 1rem;
             }
 
             &:hover {
                 color: $color-theme-red;
             }
+        }
 
-            &:is-active {
-                color: $color-theme-red;
-            }
+        .active {
+            color: $color-theme-red;
         }
     } 
 
     .navbar-icons {
-        position: relative;
-        align-items: center;
+        display: flex;
+
         
-        
-        i {
+        .navbar-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: white;
             box-shadow: 0 0 8px 0.5px grey;
             border-radius: 50%;
-            padding: 0.5rem;
+            width: 36px;
+            height: 36px;
             margin: 0 0.25rem;
             font-size: $font-size-16;
-
-            @include sm {
-                margin: 0 0.5rem;
-        
-            }
-        }
-
-        a {
             transition: 0.2s ease-in-out;
             color: $color-dark-20;
 
             &:hover {
                 color: $color-theme-red;
+    
+            }
+
+            @include sm {
+                margin: 0 0.5rem;
+        
             }
         }
 

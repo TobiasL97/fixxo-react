@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ProductBoxFlexed from './ProductBoxFlexed'
 
-const SaleGrid = ({gridHeader, saleProducts}) => {
+const SaleProductGrid = ({gridHeader, saleProducts}) => {
 
   return (
     <div className="sale-product-grid grid">
@@ -13,4 +13,4 @@ const SaleGrid = ({gridHeader, saleProducts}) => {
   )
 }
 
-export default SaleGrid
+export default SaleProductGrid
