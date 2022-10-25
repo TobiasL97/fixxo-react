@@ -95,10 +95,13 @@
         }
 
         .sale-product-grid {
-            grid-template-columns: 350px;
+            grid-template-columns: 330px;
             gap: 1.5rem;
             justify-content: center;
 
+            @include sm {
+                grid-template-columns: 350px;
+            }
 
             @include md {
                 justify-content: start;

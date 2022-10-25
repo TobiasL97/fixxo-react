@@ -6,7 +6,7 @@ const OurSpecialityBox = ({headLine, headLineSpan, link}) => {
     <div className="speciality-boxes">
         <div className="speciality-boxes-text">
             <h1>{headLine}<span>{headLineSpan}</span></h1>
-            <NavLink to={link}>Get started<i className="fa-regular fa-chevron-right"></i></NavLink>
+            <NavLink className="get-started" to={link}>Get started<i className="fa-regular fa-chevron-right"></i></NavLink>
         </div>
         <div className="grey-box"></div>
     </div>

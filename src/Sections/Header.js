@@ -23,8 +23,8 @@ const Header = () => {
               <div className="navbar-icons">
                   <NavbarIcon link="/search" icon="fa-regular fa-magnifying-glass"/>
                   <NavbarIcon link="/compare" icon="fa-regular fa-code-compare"/>
-                  <NavbarIcon link="/favourites" icon="fa-regular fa-heart"/>
-                  <NavbarIcon link="/shoppingcart" icon="fa-regular fa-bag-shopping"/>
+                  <NavbarIcon className="notification" quantity="3" link="/favourites" icon="fa-regular fa-heart"/>
+                  <NavbarIcon className="notification" quantity="5" link="/shoppingcart" icon="fa-regular fa-bag-shopping"/>
               </div>
           </nav>
       </div>

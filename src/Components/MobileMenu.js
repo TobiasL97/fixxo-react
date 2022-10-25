@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const MobileMenu = () => {
 
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(true)
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)

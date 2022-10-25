@@ -1,6 +1,12 @@
 .our-speciality {
     position: relative;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    @include lg {
+        margin-top: 4rem;
+        margin-bottom: 0rem;
+    }
 
     > h1 {
         position: absolute;
@@ -16,6 +22,13 @@
 
         @include lg {
             top: 7%;
+        }
+    }
+
+    .get-started {
+        transition: 0.2s ease-in-out;
+        &:hover {
+            color: $color-theme-red;
         }
     }
 

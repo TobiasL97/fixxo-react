@@ -1,14 +1,14 @@
-header{
+.header-white{
     position: relative;
-    background-color: $color-gray-10;
+    background-color: white;
 }
-    .__navbar {
+    .__navbar-white {
         position: fixed;
         padding: 1rem 1rem;
         align-items: center;
         font-size: $font-size-16;
         font-weight: $font-weight-medium;
-        background-color: $color-gray-10;
+        background-color: white;
         width: 100%;
         z-index: 1;
         left: 0;
@@ -66,7 +66,7 @@ header{
                 right: 100%;
                 width: 100%;
                 padding: 0.5rem 0 0.5rem 0rem;
-                background-color: white;
+                background-color: rgb(240, 240, 240);
                 opacity: 95%;
                 transition: 0.3s ease-in-out;
 
@@ -75,7 +75,7 @@ header{
                 }
 
                 &.is-active {
-                    right: 0rem;
+                    right: 0;
                 }
 
         
@@ -125,7 +125,6 @@ header{
 
             &:hover {
                 color: $color-theme-red;
-                cursor: pointer;
             }
         }
 
@@ -169,6 +168,53 @@ header{
             @include sm {
                 margin: 0 0.5rem;
         
+            }
+        }
+
+        #favourites {
+            position: relative;
+            
+
+            .notification {
+                position: absolute;
+                top: -0.4rem;
+                left: 1.2rem;
+                width: 0.8rem;
+                height: 0.7rem;
+                border-radius: 50%;
+                background-color: $color-theme-red;
+                text-align: center;
+                align-items: center;
+                color: white;
+                font-size: 0.5rem;
+
+                @include sm {
+                    top: -0.4rem;
+                    left: 1.7rem;
+                }
+            }
+        }
+
+        #cart {
+            position: relative;
+
+            .notification {
+                position: absolute;
+                top: -0.4rem;
+                left: 1.2rem;
+                width: 0.8rem;
+                height: 0.7rem;
+                border-radius: 50%;
+                background-color: $color-theme-red;
+                text-align: center;
+                align-items: center;
+                color: white;
+                font-size: 0.5rem;
+
+                @include sm {
+                    top: -0.4rem;
+                    left: 1.7rem;
+                }
             }
         }
     }
