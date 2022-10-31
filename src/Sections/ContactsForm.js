@@ -1,69 +1,94 @@
 import React, { useState } from 'react'
+import { submitData, validate } from '../Assets/scripts/validation'
 
 const ContactsForm = () => {
-    const [contactForm, setContactForm] = useState({name: '', email: '', comment: ''})
-    const [formErrors, setFormErrors] = useState({})
-    const [Submitted, setSubmitted] = useState(false)
+    let currentPage = "Contact Us"
+    window.top.document.title = `${currentPage} || Fixxo` 
+  
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [comments, setComments] = useState('')
+    const [errors, setErrors] = useState({})
+    const [submitted, setSubmitted] = useState(false)
+    const [failedSubmit, setFailedSubmit] = useState(false)
+  
+    const handleChange = (e) => {
+      const {id, value} = e.target
+  
+      switch(id) {
+        case 'name':
+          setName(value)
+          break
+        case 'email':
+          setEmail(value)
+          break
+        case 'comments':
+          setComments(value)
+          break
+      }
+  
+      setErrors({...errors, [id]: validate(e)})
+    }
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+      setErrors(validate(e, {name, email, comments}))
+    
+      if (errors.name === null && errors.email === null && errors.comments === null) {
 
-    const validate = (values) => {
-        const errors = {}
-        const regex_email = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
+        let json = JSON.stringify({name, email, comments})
 
-        if(!values.name) {
-            errors.name = "You must enter a name"
-        }
-
-        if(!values.email) {
-            errors.email = "You must enter an e-mail address"
-        }
-        else if (!regex_email.test(values.email)) {
-            errors.email = "You must enter a valid e-mail address (eg. name@domain.com)"
-        }
-
-        if(!values.comment) {
-            errors.comment = "You must enter a comment"
-        }
-        else if(values.comment.length < 5) {
-            errors.comment = "Your comment must be longer than five characters"
-        }
-
-        if(Object.keys(errors).length === 0) {
-            setSubmitted(true)
+        setName('')
+        setEmail('')
+        setComments('')
+        setErrors({})
+        
+        if(await submitData('https://win22-webapi.azurewebsites.net/api/contactform','Post', json)) {
+          setSubmitted(true)
+          setFailedSubmit(false)
         }
         else {
-            setSubmitted(false) 
+          setSubmitted(false)
+          setFailedSubmit(true)
         }
 
-
-        return errors;
+      } else {
+        setSubmitted(false)
+      }
     }
 
-    const handleChange = (e) => {
-        const {id, value} = e.target
-        setContactForm({...contactForm, [id]: value})
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setFormErrors(validate(contactForm))
-    }
-    
     return (
     <section className="contact-form">
         <div className="container-small">
+
+          {
+            submitted ? (
+              <div className="alert alert-success text-center" role="alert">
+                <h3>Thank you for your comment</h3>
+                <p>We will contact you as soon as possible.</p>
+              </div> ) : (<></>)
+          }
+
+          {
+            failedSubmit ? (
+              <div className="alert alert-danger text-center" role="alert">
+                <h3>Something went wrong!</h3>
+                <p>We couldn't submit your comment right now.</p>
+              </div> ) : (<></>)
+          }
             <h2>Come in Contact with Us</h2>
             <form onSubmit={handleSubmit} noValidate>
                 <div>
-                    <input id="name"  type="text" placeholder="Your Name"  value={contactForm.name} onChange={handleChange}/>
-                    <div id="nameErrorMessage" className="errorMessage">{formErrors.name}</div>
+                    <input id="name" className={(errors.name ? 'error': '')}  type="text" placeholder="Your Name" value={name} onChange={handleChange}/>
+                    <div id="nameErrorMessage" className={(errors.name ? 'errorMessage': '')}>{errors.name}</div>
                 </div>
                 <div>
-                    <input id="email" type="email" placeholder="Your Email" value={contactForm.email} onChange={handleChange}/>
-                    <div id="emailErrorMessage" className="errorMessage">{formErrors.email}</div>
+                    <input id="email" type="email" className={(errors.email ? 'error': '')} placeholder="Your Email" value={email} onChange={handleChange}/>
+                    <div id="emailErrorMessage" className="errorMessage">{errors.email}</div>
                 </div>
                 <div className="textarea">
-                    <textarea id="message"  placeholder="Comments" value={contactForm.comment} onChange={handleChange}></textarea>
-                    <div id="commentErrorMessage" className="errorMessage">{formErrors.comment}</div>
+                    <textarea id="comments" className={(errors.comments ? 'error': '')} placeholder="Comment"  value={comments} onChange={handleChange}></textarea>
+                    <div id="commentErrorMessage" className="errorMessage">{errors.comments}</div>
                 </div>
                 <div>
                     <button className="button-theme" type="submit">Post Comments</button>
