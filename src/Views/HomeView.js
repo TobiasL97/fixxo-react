@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../Sections/Header'
 import ShowCase from '../Sections/ShowCase'
 import Promo from '../Sections/Promo'
@@ -11,8 +11,12 @@ import Footer from '../Sections/Footer'
 import ProductGrid from '../Sections/ProductGrid'
 import { useState } from 'react'
 import Sale from '../Sections/Sale'
+import { productContext } from '../Contexts/contexts'
+
 
 const HomeView = () => {
+
+  const ProductContext = useContext(productContext)
 
   const [TwoFor29Products, setTwoFor29Products] = useState([
     { id : 1, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
@@ -43,7 +47,7 @@ const HomeView = () => {
       <Header />
       <ShowCase />
       <Promo />
-      <ProductGrid title="Featured Products"/>
+      <ProductGrid title="Featured Products" products={ProductContext.featuredProducts}/>
       <Promo2 />
       <OurSpeciality />
       <TwoFor29 TwoFor29Products={TwoFor29Products}/>

@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import ProductBox from '../Components/ProductBox'
-import { productContext } from '../Contexts/contexts'
 
-const ProductGrid = ({title}) => {
 
-  const products = useContext(productContext)
+
+const ProductGrid = ({title, products = []}) => {
+
+  
 
   return (
     <section className="product-grid">

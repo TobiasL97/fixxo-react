@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const MobileMenu = () => {
@@ -11,6 +11,7 @@ const MobileMenu = () => {
 
   const closeMenu = () => {
     setShowMenu(false)
+    window.scrollTo({top:0, behavior: 'instant'})
   }
   return (
     <div className="Mobile-Menu">
