@@ -226,13 +226,19 @@
 // Product-box
 
 .product-box {
-            
+    width: 255px;
+    height: 323px;       
 
     .product-box-content {
         position: relative;
         height: 65%;
         background-color: $color-off-white;
         transition: 0.2s ease-in-out;
+
+        .product-image {
+            width: 100%;
+            position: absolute;
+        }
 
         @include lg {
 
@@ -244,7 +250,7 @@
                 }
     
                 .button-theme-product-box {
-                    opacity: 100;
+                    opacity: 90%;
                 }
     
                 .menu-icon {
@@ -309,8 +315,7 @@
             &:hover {
     
                 &:hover {
-                    color: $color-dark-10;
-    
+                    color: $color-dark-10;   
                     .button-theme-left {
                         border-left: 2px solid $color-dark-10;
                         border-top: 2px solid $color-dark-10;

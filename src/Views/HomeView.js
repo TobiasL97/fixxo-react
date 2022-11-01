@@ -14,17 +14,6 @@ import Sale from '../Sections/Sale'
 
 const HomeView = () => {
 
-  const [products, setProducts] = useState([
-    { id : 1, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 2, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 3, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 4, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 5, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 6, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 7, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 8, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"}
-  ])
-
   const [TwoFor29Products, setTwoFor29Products] = useState([
     { id : 1, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
     { id : 2, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
@@ -54,7 +43,7 @@ const HomeView = () => {
       <Header />
       <ShowCase />
       <Promo />
-      <ProductGrid title="Featured Products" products={products}/>
+      <ProductGrid title="Featured Products"/>
       <Promo2 />
       <OurSpeciality />
       <TwoFor29 TwoFor29Products={TwoFor29Products}/>

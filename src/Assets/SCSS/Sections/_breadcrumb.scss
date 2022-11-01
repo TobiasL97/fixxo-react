@@ -18,13 +18,14 @@
             display: inline-block;
             font-weight: $font-weight-medium;
     
-            .breadcrumb-text {
+            .breadcrumb-page {
                 color: $color-dark-10;
                 margin-right: 0.4rem;
             }
 
-            .active {
+            .breadcrumb-home{
                 color: $color-theme-red;
+                margin-right: 0.4rem;
             }
     
             & + li:before {

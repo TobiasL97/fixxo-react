@@ -13,22 +13,21 @@
     .container-small {
         justify-content: center;
         grid-template-columns: 255px;
-        grid-template-rows: repeat(8, 323px);
         gap: 2rem;
 
         @include sm {
             grid-template-columns: repeat(2, 255px);
-            grid-template-rows: repeat(4, 323px);
+            
         }
 
         @include lg {
             grid-template-columns: repeat(3, 255px);
-            grid-template-rows: repeat(3, 323px);
+            
         }
 
         @include xl {
             grid-template-columns: repeat(4, 255px);
-            grid-template-rows: repeat(2, 323px);
+            
         }
     }
 }
