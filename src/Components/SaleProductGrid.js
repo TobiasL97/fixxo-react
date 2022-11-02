@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import ProductBoxFlexed from './ProductBoxFlexed'
 
-const SaleProductGrid = ({gridHeader, saleProducts}) => {
+const SaleProductGrid = ({title, products = []}) => {
 
   return (
     <div className="sale-product-grid grid">
-      <h1>{gridHeader}</h1>
+      <h1>{title}</h1>
       {
-        saleProducts.map(saleProduct => <ProductBoxFlexed saleProduct={saleProduct}/>)
+        products.map(product => <ProductBoxFlexed key={product.articleNumber} product={product}/>)
       }
     </div>
   )

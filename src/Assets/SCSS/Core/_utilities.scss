@@ -250,7 +250,7 @@
                 }
     
                 .button-theme-product-box {
-                    opacity: 90%;
+                    opacity: 95%;
                 }
     
                 .menu-icon {
@@ -592,7 +592,7 @@
         width: 50%;
         padding-left: 5%;
 
-        h1 {
+        > h1 {
             font-size: $font-size-13;
             font-weight: $font-weight-semibold;
             margin-bottom: 0.5rem;

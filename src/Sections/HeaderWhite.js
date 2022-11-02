@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import NavbarIcon from '../Components/NavbarIcon'
 import FixxoLogo from '../Assets/fixxo-icon.svg'
 
-const HeaderTransparent = () => {
+const HeaderWhite = () => {
   return (
     <header className="header-white">
         <div className="container">
@@ -31,4 +31,4 @@ const HeaderTransparent = () => {
   )
 }
 
-export default HeaderTransparent
+export default HeaderWhite

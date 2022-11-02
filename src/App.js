@@ -12,7 +12,10 @@ function App() {
 
   const [products, setProducts] = useState({
     allProducts: [],
-    featuredProducts: [] 
+    featuredProducts: [],
+    TwoFor29: [],
+    TwoFor49: [],
+    saleProductGrid: []
   })
 
   useEffect(() => {
@@ -32,6 +35,30 @@ function App() {
 
     }
     fetchfeaturedProducts();
+
+    const fetchTwoFor29 = async () => {
+
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+      setProducts({...products, TwoFor29: await result.json()})
+
+    }
+    fetchTwoFor29();
+
+    const fetchTwoFor49 = async () => {
+
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+      setProducts({...products, TwoFor49: await result.json()})
+
+    }
+    fetchTwoFor49();
+
+    const fetchsaleProductGrid = async () => {
+
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+      setProducts({...products, saleProductGrid: await result.json()})
+
+    }
+    fetchsaleProductGrid();
     
   }, [setProducts])
 

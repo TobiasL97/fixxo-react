@@ -1,4 +1,4 @@
-header{
+.header-gray{
     position: relative;
     background-color: $color-gray-10;
 }
@@ -15,6 +15,7 @@ header{
 
         @include lg {
             position: relative;
+            padding: 1rem 0rem;
         }
 
         .Mobile-Menu {

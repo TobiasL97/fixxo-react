@@ -10,7 +10,7 @@
         margin-bottom: 2rem;
     }
 
-    .container-small {
+    > .container-small {
         justify-content: center;
         grid-template-columns: 255px;
         gap: 2rem;

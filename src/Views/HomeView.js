@@ -17,29 +17,6 @@ import { productContext } from '../Contexts/contexts'
 const HomeView = () => {
 
   const ProductContext = useContext(productContext)
-
-  const [TwoFor29Products, setTwoFor29Products] = useState([
-    { id : 1, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 2, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 3, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 4, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-
-  ])
-
-  const [TwoFor49Products, setTwoFor49Products] = useState([
-    { id : 1, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 2, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 3, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-    { id : 4, name: "Mordern Black Blouse", category: "Fashion", orgPrice: "$35.00", newPrice: "$25.00"},
-
-  ])
-
-  const [saleProducts, setSaleProducts] = useState([
-    {id: 1, category: "fashion", name: "Modern Blue Blouse", price: "$35.00"},
-    {id: 2, category: "fashion", name: "Modern Blue Blouse", price: "$35.00"},
-    {id: 3, category: "fashion", name: "Modern Blue Blouse", price: "$35.00"},
-    {id: 3, category: "fashion", name: "Modern Blue Blouse", price: "$35.00"}
-  ])
   
 
   return (
@@ -50,9 +27,9 @@ const HomeView = () => {
       <ProductGrid title="Featured Products" products={ProductContext.featuredProducts}/>
       <Promo2 />
       <OurSpeciality />
-      <TwoFor29 TwoFor29Products={TwoFor29Products}/>
-      <TwoFor49 TwoFor49Products={TwoFor49Products}/>
-      <Sale saleProducts={saleProducts}/>
+      <TwoFor29 title="2 FOR USD $29" products={ProductContext.TwoFor29}/>
+      <TwoFor49 title="2 FOR USD $49" products={ProductContext.TwoFor49}/>
+      <Sale products={ProductContext.saleProductGrid}/>
       <CompanyService />
       <Footer />
     

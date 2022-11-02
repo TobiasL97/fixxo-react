@@ -2,13 +2,13 @@ import React from 'react'
 import Offer from '../Components/Offer'
 import ProductBox from '../Components/ProductBox'
 
-const TwoFor49 = ({TwoFor49Products}) => {
+const TwoFor49 = ({title, products = []}) => {
   return (
     <section className="shopping-grid-2-for-49 container">
-        <Offer OfferText="2 FOR USD $49"/>
+        <Offer OfferText={title}/>
         <div className="product-grid grid">
           {
-            TwoFor49Products.map(product => <ProductBox key={product.id} product={product}/>)
+            products.map(product => <ProductBox key={product.articleNumber} product={product}/>)
           }
         </div>
     </section>

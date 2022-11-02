@@ -7,7 +7,7 @@ import FixxoLogo from '../Assets/fixxo-icon.svg'
 const Header = () => {
 
   return (
-    <header>
+    <header className="header-gray">
       <div className="container">
           <nav className="__navbar flex c-between">
               <MobileMenu />
