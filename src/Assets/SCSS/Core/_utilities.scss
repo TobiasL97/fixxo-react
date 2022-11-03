@@ -426,8 +426,15 @@
             }
 
             .button-theme-product-box-flexed {
-                opacity: 100;
+                opacity: 90%;
             }
+        }
+
+        .product-image {
+            position: absolute;
+            width: 100%;
+            height: 98%;
+            object-fit: cover;
         }
 
         .product-box-flexed-content-menu {
@@ -478,7 +485,7 @@
             color: white;
             background-color: $color-theme-red;
             font-weight: $font-weight-semibold;
-            opacity: 100;
+            opacity: 90%;
             transition: 0.2s ease-in-out;
 
             @include xl {

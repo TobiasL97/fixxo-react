@@ -6,7 +6,7 @@ const ProductBoxFlexed = ({product}) => {
     <div className="product-box-flexed flex">
         <div className="product-box-flexed-content">
         <img className="product-image" src={product.imageName} alt={product.name} />
-            <NavLink className="button-theme-product-box-flexed" to="/products">
+            <NavLink className="button-theme-product-box-flexed" to={`/products/${product.name.toLowerCase().replace(/ /gi, "-")}`}>
                 <span className="button-theme-left"></span>
                 SHOP NOW
                 <span className="button-theme-right"></span>

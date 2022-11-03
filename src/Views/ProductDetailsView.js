@@ -21,7 +21,8 @@ const ProductDetailsView = () => {
               <div id="image3" className="images"></div>
               <div id="image4" className="images"></div>
             </div>
-            <div className="product-details">
+            <div className="product-detail">
+              <div className="product-details">
               <h1 className="product-name">{params.name}</h1>
               <p className="sku">SKU: 12345670</p>
               <p className="brand">BRAND: The Northland</p>
@@ -31,9 +32,10 @@ const ProductDetailsView = () => {
                 <i className="fa-sharp fa-solid fa-star"></i>
                 <i className="fa-sharp fa-solid fa-star"></i>
                 <i className="fa-sharp fa-solid fa-star"></i>
-            </p>
+              </p>
               <p className="product-price">$35.00</p>
               <p className="product-text">Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (<NavLink className="product-readmore">read more</NavLink>)</p>
+              </div>
               <form className="add-to-cart-form">
                 <div className="choose-size">
                   <input type="radio" name="product-size" id="small"></input>
@@ -45,7 +47,17 @@ const ProductDetailsView = () => {
                   <input type="radio" name="product-size" id="x-large"></input>
                   <label className="product-size" for="x-large">XL</label>
                 </div>
-                
+                <button type="button" className="color-select">Choose a color <i class="fa-light fa-chevron-down"></i></button>
+                <div className="quantity-submit">
+                  <div className="quantity-button">
+                    <button className="decrease" type="button"><i class="fa-solid fa-minus"></i></button>
+                    <p className="quantity-number">1</p>
+                    <button className="increase" type="button"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                  <div>
+                    <button className="add-to-cart-button" type="submit">ADD TO CART</button>
+                </div>
+                </div>
               </form>
             </div>
           </div>
