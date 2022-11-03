@@ -127,6 +127,22 @@
                    }
                 }
             }
+
+            input[type="radio"] {
+                display: none;
+
+                &:checked + label {
+                    background-color: $color-dark-20;
+                    color: white;
+                }
+            }
+
+            .product-size {
+                position: relative;
+                border: 1px solid black;
+                padding: 5px 10px;
+                margin-right: 0.5rem;
+            }
         }
     }
 }

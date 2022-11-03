@@ -34,6 +34,19 @@ const ProductDetailsView = () => {
             </p>
               <p className="product-price">$35.00</p>
               <p className="product-text">Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (<NavLink className="product-readmore">read more</NavLink>)</p>
+              <form className="add-to-cart-form">
+                <div className="choose-size">
+                  <input type="radio" name="product-size" id="small"></input>
+                  <label className="product-size" for="small">S</label>
+                  <input type="radio" name="product-size" id="medium"></input>
+                  <label className="product-size" for="medium">M</label>
+                  <input type="radio" name="product-size" id="large"></input>
+                  <label className="product-size" for="large">L</label>
+                  <input type="radio" name="product-size" id="x-large"></input>
+                  <label className="product-size" for="x-large">XL</label>
+                </div>
+                
+              </form>
             </div>
           </div>
         </div>
