@@ -6,66 +6,68 @@ import NotFoundView from './Views/NotFoundView';
 import ContactsView from './Views/ContactsView';
 import ProductDetailsView from './Views/ProductDetailsView';
 import Products from './Views/Products'
-import { productContext } from './Contexts/contexts'
+import { productContext, FeaturedProductsContext, TwoFor29ProductsContext, TwoFor49ProductsContext, SaleProductsContext } from './Contexts/contexts'
 
 function App() {
 
-  const [products, setProducts] = useState({
-    allProducts: [],
-    featuredProducts: [],
-    TwoFor29: [],
-    TwoFor49: [],
-    saleProductGrid: []
-  })
+  const [products, setProducts] = useState([])
+  const [featuredProducts, setFeaturedProducts] = useState([])
+  const [twoFor29Products, setTwoFor29Products] = useState([])
+  const [twoFor49Products, setTwoFor49Products] = useState([])
+  const [saleProducts, setSaleProducts] = useState([])
 
   useEffect(() => {
 
-    const fetchAllProducts = async () => {
+    const fetchproducts = async () => {
 
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-      setProducts({...products, allProducts: await result.json()})
+      setProducts(await result.json())
 
     }
-    fetchAllProducts();
+    fetchproducts();
 
     const fetchfeaturedProducts = async () => {
 
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
-      setProducts({...products, featuredProducts: await result.json()})
+      setFeaturedProducts(await result.json())
 
     }
     fetchfeaturedProducts();
 
-    const fetchTwoFor29 = async () => {
+    const fetchtwoFor29Products = async () => {
 
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
-      setProducts({...products, TwoFor29: await result.json()})
+      setTwoFor29Products(await result.json())
 
     }
-    fetchTwoFor29();
+    fetchtwoFor29Products();
 
-    const fetchTwoFor49 = async () => {
+    const fetchtwoFor49Products = async () => {
 
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
-      setProducts({...products, TwoFor49: await result.json()})
+      setTwoFor49Products(await result.json())
 
     }
-    fetchTwoFor49();
+    fetchtwoFor49Products();
 
-    const fetchsaleProductGrid = async () => {
+    const fetchsaleProducts = async () => {
 
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
-      setProducts({...products, saleProductGrid: await result.json()})
+      setSaleProducts(await result.json())
 
     }
-    fetchsaleProductGrid();
+    fetchsaleProducts();
     
-  }, [setProducts])
+  }, [setProducts, setFeaturedProducts, setTwoFor29Products, setTwoFor49Products, setSaleProducts])
 
 
   return (
     <BrowserRouter>
       <productContext.Provider value={products}>
+      <FeaturedProductsContext.Provider value={featuredProducts}>
+      <TwoFor29ProductsContext.Provider value={twoFor29Products}>
+      <TwoFor49ProductsContext.Provider value={twoFor49Products}>
+      <SaleProductsContext.Provider value={saleProducts}> 
         <Routes>
           <Route path="/home" element={<HomeView />} />
           <Route path="/products" element={<Products />} />
@@ -73,6 +75,10 @@ function App() {
           <Route path="/contacts" element={<ContactsView />} />
           <Route path="*" element={<NotFoundView />} />
         </Routes>
+        </SaleProductsContext.Provider> 
+        </TwoFor49ProductsContext.Provider>
+        </TwoFor29ProductsContext.Provider>
+        </FeaturedProductsContext.Provider>
       </productContext.Provider>
     </BrowserRouter>
   );

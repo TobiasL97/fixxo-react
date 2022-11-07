@@ -7,13 +7,13 @@ import { productContext } from '../Contexts/contexts'
 
 const Products = () => {
 
-  const ProductContext = useContext(productContext)
+  const products = useContext(productContext)
 
   return (
     <div>
         <HeaderWhite />
         <BreadCrumb page="/products" pageName="Products"/>
-        <ProductGrid title="Products" products={ProductContext.allProducts}/>
+        <ProductGrid title="Products" products={products}/>
     </div>
   )
 }

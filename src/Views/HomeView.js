@@ -11,12 +11,15 @@ import Footer from '../Sections/Footer'
 import ProductGrid from '../Sections/ProductGrid'
 import { useState } from 'react'
 import Sale from '../Sections/Sale'
-import { productContext } from '../Contexts/contexts'
+import { FeaturedProductsContext, TwoFor29ProductsContext, TwoFor49ProductsContext, SaleProductsContext } from '../Contexts/contexts'
 
 
 const HomeView = () => {
 
-  const ProductContext = useContext(productContext)
+  const featuredProducts = useContext(FeaturedProductsContext)
+  const twoFor29Products = useContext(TwoFor29ProductsContext)
+  const twoFor49Products = useContext(TwoFor49ProductsContext)
+  const saleProducts = useContext(SaleProductsContext)
   
 
   return (
@@ -24,12 +27,12 @@ const HomeView = () => {
       <Header />
       <ShowCase />
       <Promo />
-      <ProductGrid title="Featured Products" products={ProductContext.featuredProducts}/>
+      <ProductGrid title="Featured Products" products={featuredProducts}/>
       <Promo2 />
       <OurSpeciality />
-      <TwoFor29 title="2 FOR USD $29" products={ProductContext.TwoFor29}/>
-      <TwoFor49 title="2 FOR USD $49" products={ProductContext.TwoFor49}/>
-      <Sale products={ProductContext.saleProductGrid}/>
+      <TwoFor29 title="2 FOR USD $29" products={twoFor29Products}/>
+      <TwoFor49 title="2 FOR USD $49" products={twoFor49Products}/>
+      <Sale products={saleProducts}/>
       <CompanyService />
       <Footer />
     

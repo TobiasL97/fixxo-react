@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import ButtonThemeLight from '../Components/ButtonThemeLight'
 import SaleProductGrid from '../Components/SaleProductGrid'
-import { productContext } from '../Contexts/contexts'
+import { SaleProductsContext } from '../Contexts/contexts'
 
 
 const Sale = () => {
 
-  const ProductContext = useContext(productContext)
+  const saleProducts = useContext(SaleProductsContext)
 
   return (
     <section className="sale container-small">
@@ -19,9 +19,9 @@ const Sale = () => {
         </div>
 
         <div className="sale-grid grid">
-            <SaleProductGrid products={ProductContext.saleProductGrid} title="Featured Products"/>
-            <SaleProductGrid products={ProductContext.saleProductGrid} title="Best Selling Products" />
-            <SaleProductGrid products={ProductContext.saleProductGrid} title="Top Reacted Products" />
+            <SaleProductGrid products={saleProducts} title="Featured Products"/>
+            <SaleProductGrid products={saleProducts} title="Best Selling Products" />
+            <SaleProductGrid products={saleProducts} title="Top Reacted Products" />
 
 
         </div>
