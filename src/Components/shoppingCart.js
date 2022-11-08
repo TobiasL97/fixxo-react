@@ -1,17 +1,23 @@
 import React from 'react'
+import { useShoppingCart } from '../Contexts/ShoppingCartContext'
+import ShoppingCartItem from './ShoppingCartItem'
 
-const shoppingCart = () => {
+const ShoppingCart = () => {
+
+  const { cartItems } = useShoppingCart()
   return (
-    <div className="offcanvas offcanvas-end" tabindex="-1" id="shoppingCart" aria-labelledby="shoppingCartLabel">
+    <div className="shoppingcart offcanvas offcanvas-end" tabindex="-1" id="shoppingCart" aria-labelledby="shoppingCartLabel">
         <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="shoppingCartLabel">Offcanvas right</h5>
+            <h5 className="offcanvas-title" id="shoppingCartLabel"><i className="fa-regular fa-bag-shopping me-3"></i>Shopping Cart</h5>
             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div className="offcanvas-body">
-            ...
+            {
+              cartItems.map(item => (<ShoppingCartItem  key={item.articleNumber} item={item} />))
+            }
         </div>
     </div>
   )
 }
 
-export default shoppingCart
+export default ShoppingCart

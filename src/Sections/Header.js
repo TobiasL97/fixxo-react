@@ -1,10 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import MobileMenu from '../Components/MobileMenu'
-import NavbarIcon from '../Components/NavbarIcon'
 import FixxoLogo from '../Assets/fixxo-icon.svg'
+import { useShoppingCart } from '../Contexts/ShoppingCartContext'
 
 const Header = () => {
+
+const { cartQuantity } = useShoppingCart()
 
   return (
     <header className="header-gray">
@@ -21,11 +23,21 @@ const Header = () => {
               </div>
 
               <div className="navbar-icons">
-                  <NavbarIcon className="navbar-button" link="/search" icon="fa-regular fa-magnifying-glass"/>
-                  <NavbarIcon className="navbar-button" link="/compare" icon="fa-regular fa-code-compare"/>
-                  <NavbarIcon className="navbar-button" classNameSpan="notification" quantity="3" link="/favourites" icon="fa-regular fa-heart"/>
-                  <button class="navbar-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
-                    <NavbarIcon className="navbar-icon" classNameSpan="notification" quantity="3" link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
+                  <NavLink className="navbar-icon" end>
+                    <span ></span>    
+                      <i className="fa-regular fa-magnifying-glass"></i>
+                  </NavLink>
+                  <NavLink className="navbar-icon" end>
+                    <span></span>    
+                      <i className="fa-regular fa-code-compare"></i>
+                  </NavLink>
+                  <NavLink className="navbar-icon" end>
+                    <span className="notification"></span>    
+                      <i className="fa-regular fa-heart"></i>
+                  </NavLink>
+                  <button class="navbar-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
+                        <span className="notification">{cartQuantity}</span>    
+                        <i className="fa-regular fa-bag-shopping"></i>
                   </button>
               </div>
           </nav>

@@ -139,6 +139,10 @@
     
             .navbar-icons {
                 display: flex;
+
+                > button {
+                    border: none;
+                }
     
                 
                 .navbar-icon {

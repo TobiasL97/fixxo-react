@@ -1,4 +1,4 @@
-import shoppingCart from "../Components/shoppingCart";
+import ShoppingCart from "../Components/ShoppingCart";
 
 const { createContext, useContext, useState } = require("react");
 
@@ -68,6 +68,6 @@ export const ShoppingCartProvider = ({children}) => {
 
     return <ShoppingCartContext.Provider value={{cartItems, cartQuantity, incrementQuantity, getItemQuantity, decrementQuantity, removeItem}}>
         {children}
-        <shoppingCart />
+        <ShoppingCart />
     </ShoppingCartContext.Provider>
 }

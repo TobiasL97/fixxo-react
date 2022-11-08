@@ -138,8 +138,12 @@
     .navbar-icons {
         display: flex;
 
+        > button {
+            border: none;
+        }
+
         
-        .navbar-button {
+        .navbar-icon {
             position: relative;
             display: flex;
             justify-content: center;
@@ -157,10 +161,6 @@
             &:hover {
 
                 &:hover {
-                    color: $color-theme-red;
-                }
-                
-                .navbar-icon {
                     color: $color-theme-red;
                 }
     
@@ -183,10 +183,6 @@
                 margin: 0 0.5rem;
         
             }
-        }
-
-        button {
-            border: none;
         }
     }
 }

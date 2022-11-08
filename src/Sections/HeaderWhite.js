@@ -1,10 +1,12 @@
 import React from 'react'
 import MobileMenu from '../Components/MobileMenu'
 import { NavLink } from 'react-router-dom'
-import NavbarIcon from '../Components/NavbarIcon'
 import FixxoLogo from '../Assets/fixxo-icon.svg'
+import { useShoppingCart } from '../Contexts/ShoppingCartContext'
 
 const HeaderWhite = () => {
+
+    const { cartQuantity } = useShoppingCart()
   return (
     <header className="header-white">
         <div className="container">
@@ -20,10 +22,22 @@ const HeaderWhite = () => {
                 </div>
 
                 <div className="navbar-icons">
-                    <NavbarIcon link="/search" icon="fa-regular fa-magnifying-glass"/>
-                    <NavbarIcon link="/compare" icon="fa-regular fa-code-compare"/>
-                    <NavbarIcon className="notification" quantity="3" link="/favourites" icon="fa-regular fa-heart"/>
-                    <NavbarIcon className="notification" quantity="5" link="/shoppingcart" icon="fa-regular fa-bag-shopping"/>
+                <NavLink className="navbar-icon" end>
+                    <span ></span>    
+                      <i className="fa-regular fa-magnifying-glass"></i>
+                  </NavLink>
+                  <NavLink className="navbar-icon" end>
+                    <span></span>    
+                      <i className="fa-regular fa-code-compare"></i>
+                  </NavLink>
+                  <NavLink className="navbar-icon" end>
+                    <span></span>    
+                      <i className="fa-regular fa-heart"></i>
+                  </NavLink>
+                  <button class="navbar-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
+                        <span className="notification">{cartQuantity}</span>    
+                        <i className="fa-regular fa-bag-shopping"></i>
+                  </button>
                 </div>
             </nav>
         </div>

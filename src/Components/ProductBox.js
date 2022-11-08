@@ -1,20 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useShoppingCart } from '../Contexts/ShoppingCartContext'
 
 
 const ProductBox = ({product}) => {
 
-    const addToFavourites = (e) => {
-        console.log(`${e.product} added to favourites`)
-    }
-
-    const addToCompare = (e) => {
-        console.log("added to Compare")
-    }
-
-    const addToCart = (e) => {
-        console.log("added to Cart")
-    }
+    const { incrementQuantity } = useShoppingCart()
 
   return (
     <div className="product-box">
@@ -26,9 +17,9 @@ const ProductBox = ({product}) => {
                 <span className="button-theme-right"></span>
             </NavLink>
             <div className="content-menu">
-                <button onClick={addToFavourites} className="menu-icon"><i className="fa-regular fa-heart"></i></button>
-                <button onClick={addToCompare} className="menu-icon"><i className="fa-regular fa-code-compare"></i></button>
-                <button onClick={addToCart} className="menu-icon"><i className="fa-regular fa-bag-shopping"></i></button>
+                <button  className="menu-icon"><i className="fa-regular fa-heart"></i></button>
+                <button  className="menu-icon"><i className="fa-regular fa-code-compare"></i></button>
+                <button onClick={() => incrementQuantity({articleNumber: product.articleNumber, product: product})} className="menu-icon"><i className="fa-regular fa-bag-shopping"></i></button>
             </div>
         </div>
         <div className="product-box-text">

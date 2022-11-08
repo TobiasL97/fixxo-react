@@ -7,7 +7,7 @@ import ContactsView from './Views/ContactsView';
 import ProductDetailsView from './Views/ProductDetailsView';
 import Products from './Views/Products'
 import { productContext, FeaturedProductsContext, TwoFor29ProductsContext, TwoFor49ProductsContext, SaleProductsContext } from './Contexts/contexts'
-import { ShoppingCartProvider } from './Contexts/shoppingCartContext'
+import { ShoppingCartProvider } from './Contexts/ShoppingCartContext'
 
 function App() {
 
