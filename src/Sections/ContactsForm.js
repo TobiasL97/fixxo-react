@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { submitData, validate } from '../Assets/scripts/validation'
 
 const ContactsForm = () => {
-    let currentPage = "Contact Us"
-    window.top.document.title = `${currentPage} || Fixxo` 
   
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')

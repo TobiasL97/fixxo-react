@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 
-const CategoryBox = ({product}) => {
+const ProductBox = ({product}) => {
 
     const addToFavourites = (e) => {
         console.log(`${e.product} added to favourites`)
@@ -50,4 +50,4 @@ const CategoryBox = ({product}) => {
   )
 }
 
-export default CategoryBox
+export default ProductBox

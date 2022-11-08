@@ -139,7 +139,7 @@
         display: flex;
 
         
-        .navbar-icon {
+        .navbar-button {
             position: relative;
             display: flex;
             justify-content: center;
@@ -151,8 +151,25 @@
             height: 36px;
             margin: 0 0.25rem;
             font-size: $font-size-16;
-            transition: 0.2s ease-in-out;
             color: $color-dark-20;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+
+                &:hover {
+                    color: $color-theme-red;
+                }
+                
+                .navbar-icon {
+                    color: $color-theme-red;
+                }
+    
+            }
+            
+            > .navbar-icon {
+                transition: 0.2s ease-in-out;
+                color: $color-dark-20;
+            }
 
             &:nth-child(2) {
                 display: none;
@@ -162,15 +179,14 @@
                 }
             }
 
-            &:hover {
-                color: $color-theme-red;
-    
-            }
-
             @include sm {
                 margin: 0 0.5rem;
         
             }
+        }
+
+        button {
+            border: none;
         }
     }
 }

@@ -1,10 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useShoppingCart } from '../Contexts/shoppingCartContext'
 
-const NavbarIcon = ({link, icon, quantity, className}) => {
+const NavbarIcon = ({link, icon, classNameSpan, className}) => {
+
+  const { cartQuantity } = useShoppingCart()
+
   return (
-    <NavLink className="navbar-icon" to={link} end>
-        <span className={className}>{quantity}</span>    
+    <NavLink className={className} to={link} end>
+        <span className={classNameSpan}>{cartQuantity}</span>    
         <i className={icon}></i>
     </NavLink>
   )

@@ -1,11 +1,13 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext } from 'react'
 import HeaderWhite from '../Sections/HeaderWhite'
 import BreadCrumb from '../Sections/BreadCrumb'
 import { NavLink } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
 
 const ProductDetailsView = () => {
-    const params = useParams()
+
+  const product = useParams()
 
   return (
     <>
@@ -23,7 +25,7 @@ const ProductDetailsView = () => {
             </div>
             <div className="product-detail">
               <div className="product-details">
-              <h1 className="product-name">{params.name}</h1>
+              <h1 className="product-name">{product.name}</h1>
               <p className="sku">SKU: 12345670</p>
               <p className="brand">BRAND: The Northland</p>
               <p className="product-rating">
@@ -33,7 +35,7 @@ const ProductDetailsView = () => {
                 <i className="fa-sharp fa-solid fa-star"></i>
                 <i className="fa-sharp fa-solid fa-star"></i>
               </p>
-              <p className="product-price">$35.00</p>
+              <p className="product-price"></p>
               <p className="product-text">Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (<NavLink className="product-readmore">read more</NavLink>)</p>
               </div>
               <form className="add-to-cart-form">

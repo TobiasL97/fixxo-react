@@ -7,6 +7,7 @@ import ContactsView from './Views/ContactsView';
 import ProductDetailsView from './Views/ProductDetailsView';
 import Products from './Views/Products'
 import { productContext, FeaturedProductsContext, TwoFor29ProductsContext, TwoFor49ProductsContext, SaleProductsContext } from './Contexts/contexts'
+import { ShoppingCartProvider } from './Contexts/shoppingCartContext'
 
 function App() {
 
@@ -18,13 +19,13 @@ function App() {
 
   useEffect(() => {
 
-    const fetchproducts = async () => {
+    const fetchProducts = async () => {
 
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
       setProducts(await result.json())
 
     }
-    fetchproducts();
+    fetchProducts();
 
     const fetchfeaturedProducts = async () => {
 
@@ -63,23 +64,26 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ShoppingCartProvider>
       <productContext.Provider value={products}>
       <FeaturedProductsContext.Provider value={featuredProducts}>
       <TwoFor29ProductsContext.Provider value={twoFor29Products}>
       <TwoFor49ProductsContext.Provider value={twoFor49Products}>
       <SaleProductsContext.Provider value={saleProducts}> 
         <Routes>
+          <Route path="/" element={<HomeView />} />
           <Route path="/home" element={<HomeView />} />
+          <Route path="*" element={<NotFoundView />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:name" element={<ProductDetailsView />} />
           <Route path="/contacts" element={<ContactsView />} />
-          <Route path="*" element={<NotFoundView />} />
         </Routes>
         </SaleProductsContext.Provider> 
         </TwoFor49ProductsContext.Provider>
         </TwoFor29ProductsContext.Provider>
         </FeaturedProductsContext.Provider>
       </productContext.Provider>
+      </ShoppingCartProvider>
     </BrowserRouter>
   );
 }

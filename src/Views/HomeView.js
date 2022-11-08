@@ -16,6 +16,9 @@ import { FeaturedProductsContext, TwoFor29ProductsContext, TwoFor49ProductsConte
 
 const HomeView = () => {
 
+    let currentPage = "Home"
+    window.top.document.title = `${currentPage} || Fixxo` 
+
   const featuredProducts = useContext(FeaturedProductsContext)
   const twoFor29Products = useContext(TwoFor29ProductsContext)
   const twoFor49Products = useContext(TwoFor49ProductsContext)

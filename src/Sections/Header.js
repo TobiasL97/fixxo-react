@@ -21,10 +21,12 @@ const Header = () => {
               </div>
 
               <div className="navbar-icons">
-                  <NavbarIcon link="/search" icon="fa-regular fa-magnifying-glass"/>
-                  <NavbarIcon link="/compare" icon="fa-regular fa-code-compare"/>
-                  <NavbarIcon className="notification" quantity="3" link="/favourites" icon="fa-regular fa-heart"/>
-                  <NavbarIcon className="notification" quantity="5" link="/shoppingcart" icon="fa-regular fa-bag-shopping"/>
+                  <NavbarIcon className="navbar-button" link="/search" icon="fa-regular fa-magnifying-glass"/>
+                  <NavbarIcon className="navbar-button" link="/compare" icon="fa-regular fa-code-compare"/>
+                  <NavbarIcon className="navbar-button" classNameSpan="notification" quantity="3" link="/favourites" icon="fa-regular fa-heart"/>
+                  <button class="navbar-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
+                    <NavbarIcon className="navbar-icon" classNameSpan="notification" quantity="3" link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
+                  </button>
               </div>
           </nav>
       </div>

@@ -7,6 +7,9 @@ import { productContext } from '../Contexts/contexts'
 
 const Products = () => {
 
+  let currentPage = "Products"
+  window.top.document.title = `${currentPage} || Fixxo` 
+
   const products = useContext(productContext)
 
   return (

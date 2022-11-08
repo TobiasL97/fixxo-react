@@ -5,6 +5,9 @@ import Footer from '../Sections/Footer'
 import HeaderWhite from '../Sections/HeaderWhite'
 
 const ContactsView = () => {
+  
+    let currentPage = "Contact Us"
+    window.top.document.title = `${currentPage} || Fixxo` 
   return (
     <>
       <HeaderWhite />
