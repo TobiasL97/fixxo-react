@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useShoppingCart } from '../Contexts/ShoppingCartContext'
+import { currencyFormatter } from '../Utilities/CurrencyFormatter'
 
 
 const ProductBox = ({product}) => {
@@ -34,7 +35,7 @@ const ProductBox = ({product}) => {
             </p>
             <div className="price flex c-center">
                 <p className="original-price">{product.orgPrice}</p>
-                <p className="new-price">${product.price}</p>
+                <p className="new-price">{currencyFormatter(product.price)}</p>
             </div>
         </div>
     </div>

@@ -1,7 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useShoppingCart } from '../Contexts/ShoppingCartContext'
+import { currencyFormatter } from '../Utilities/CurrencyFormatter'
 
 const ProductBoxFlexed = ({product}) => {
+
+    const { incrementQuantity } = useShoppingCart()
+
+
   return (
     <div className="product-box-flexed flex">
         <div className="product-box-flexed-content">
@@ -14,7 +20,7 @@ const ProductBoxFlexed = ({product}) => {
             <div className="product-box-flexed-content-menu">
                 <button className="menu-icon"><i className="fa-regular fa-heart"></i></button>
                 <button className="menu-icon"><i className="fa-regular fa-code-compare"></i></button>
-                <button className="menu-icon"><i className="fa-regular fa-bag-shopping"></i></button>
+                <button className="menu-icon" onClick={() => incrementQuantity({articleNumber: product.articleNumber, product: product})}><i className="fa-regular fa-bag-shopping"></i></button>
             </div>
         </div>
         <div className="product-box-flexed-text">
@@ -28,7 +34,7 @@ const ProductBoxFlexed = ({product}) => {
                 <i className="fa-sharp fa-solid fa-star"></i>
             </p>
             <div className="price flex">
-                <p className="new-price">{product.price}</p>
+                <p className="new-price">{currencyFormatter(product.price)}</p>
             </div>
         </div>
     </div>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { useShoppingCart } from '../Contexts/ShoppingCartContext'
+import { currencyFormatter } from '../Utilities/CurrencyFormatter'
 
 const ShoppingCartItem = ({item}) => {
 
-  const { incrementQuantity, decrementQuantity, removeItem } = useShoppingCart
+  const { incrementQuantity, decrementQuantity, removeItem } = useShoppingCart()
 
   return (
     <div className="shoppingcart-item">
@@ -19,7 +20,7 @@ const ShoppingCartItem = ({item}) => {
         </div>
       </div>
       <div className="item-price">
-        <div className="product-price">{item.product.price * item.quantity}</div>
+        <div className="product-price">{currencyFormatter(item.product.price * item.quantity)}</div>
         <button className="remove-product" onClick={() => removeItem(item.articleNumber)}><i class="fa-solid fa-trash-can"></i></button>
       </div>
     </div>

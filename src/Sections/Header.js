@@ -32,7 +32,7 @@ const { cartQuantity } = useShoppingCart()
                       <i className="fa-regular fa-code-compare"></i>
                   </NavLink>
                   <NavLink className="navbar-icon" end>
-                    <span className="notification"></span>    
+                    <span></span>    
                       <i className="fa-regular fa-heart"></i>
                   </NavLink>
                   <button class="navbar-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
