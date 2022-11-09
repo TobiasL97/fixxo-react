@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ProductGrid from '../Sections/ProductGrid'
 import BreadCrumb from '../Sections/BreadCrumb'
 import HeaderWhite from '../Sections/HeaderWhite'
-import { productContext } from '../Contexts/contexts'
+import { useProductContext } from '../Contexts/ProductContext'
 
 
 const Products = () => {
@@ -10,7 +10,11 @@ const Products = () => {
   let currentPage = "Products"
   window.top.document.title = `${currentPage} || Fixxo` 
 
-  const products = useContext(productContext)
+  const { products, getProducts } = useProductContext()
+
+  useEffect(() => {
+    getProducts(0)
+  }, [])
 
   return (
     <div>

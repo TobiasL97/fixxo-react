@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Sections/Header'
 import ShowCase from '../Sections/ShowCase'
 import Promo from '../Sections/Promo'
@@ -9,9 +9,8 @@ import TwoFor49 from '../Sections/TwoFor49'
 import CompanyService from '../Sections/CompanyService'
 import Footer from '../Sections/Footer'
 import ProductGrid from '../Sections/ProductGrid'
-import { useState } from 'react'
 import Sale from '../Sections/Sale'
-import { FeaturedProductsContext, TwoFor29ProductsContext, TwoFor49ProductsContext, SaleProductsContext } from '../Contexts/contexts'
+import { useProductContext } from '../Contexts/ProductContext'
 
 
 const HomeView = () => {
@@ -19,10 +18,14 @@ const HomeView = () => {
     let currentPage = "Home"
     window.top.document.title = `${currentPage} || Fixxo` 
 
-  const featuredProducts = useContext(FeaturedProductsContext)
-  const twoFor29Products = useContext(TwoFor29ProductsContext)
-  const twoFor49Products = useContext(TwoFor49ProductsContext)
-  const saleProducts = useContext(SaleProductsContext)
+  const { featuredProducts, twoFor29Products, twoFor49Products, saleProducts, getFeaturedProducts, getTwoFor29Products, getTwoFor49Products, getSaleProducts } = useProductContext()
+
+  useEffect(() => {
+    getFeaturedProducts(8)
+    getTwoFor29Products(4)
+    getTwoFor49Products(4)
+    getSaleProducts(4)
+  }, [])
   
 
   return (

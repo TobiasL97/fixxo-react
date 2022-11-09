@@ -1,12 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ButtonThemeLight from '../Components/ButtonThemeLight'
 import SaleProductGrid from '../Components/SaleProductGrid'
-import { SaleProductsContext } from '../Contexts/contexts'
+import { useProductContext } from '../Contexts/ProductContext'
 
 
 const Sale = () => {
 
-  const saleProducts = useContext(SaleProductsContext)
+  const { saleProducts, getSaleProducts } = useProductContext()
+
+  useEffect(() => {
+    getSaleProducts(4)
+  }, [])
 
   return (
     <section className="sale container-small">
