@@ -5,10 +5,10 @@ import ProductGrid from '../Sections/ProductGrid'
 
 const ProductDescription = () => {
 
-    const { featuredProducts, getFeaturedProducts} = useProductContext()
+    const { relatedProducts, getRelatedProducts} = useProductContext()
 
     useEffect(() => {
-        getFeaturedProducts(4)
+        getRelatedProducts(4)
       }, [])
   return (
     <div className="product-description">
@@ -25,7 +25,7 @@ const ProductDescription = () => {
             <p>* Joy horrible moreover man feelings own shy.</p>
             <p>On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem.</p>
         </div>
-        <ProductGrid title="Related Products" products={featuredProducts}/>
+        <ProductGrid title="Related Products" products={relatedProducts}/>
     </div>
   )
 }
