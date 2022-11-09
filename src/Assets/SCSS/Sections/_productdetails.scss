@@ -40,6 +40,8 @@
 
         .product-view {
 
+            margin-bottom: 2rem;
+
             @include lg {
                 display: flex;
             }
