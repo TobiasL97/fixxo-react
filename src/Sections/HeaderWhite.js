@@ -34,7 +34,7 @@ const HeaderWhite = () => {
                     <span></span>    
                       <i className="fa-regular fa-heart"></i>
                   </NavLink>
-                  <button class="navbar-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
+                  <button className="navbar-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
                         <span className="notification">{cartQuantity}</span>    
                         <i className="fa-regular fa-bag-shopping"></i>
                   </button>

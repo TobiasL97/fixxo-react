@@ -2,6 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const ProductDetail = ({products}) => {
+
+
   return (
     <div className="product-view">
         <div className="product-images">
@@ -12,7 +14,7 @@ const ProductDetail = ({products}) => {
         </div>
         <div className="product-detail">
         <div className="product-details">
-        <h1 className="product-name">{products.name}</h1>
+        <h1 className="product-name">Black blouse</h1>
         <p className="sku">SKU: 12345670</p>
         <p className="brand">BRAND: The Northland</p>
         <p className="product-rating">
@@ -22,30 +24,35 @@ const ProductDetail = ({products}) => {
             <i className="fa-sharp fa-solid fa-star"></i>
             <i className="fa-sharp fa-solid fa-star"></i>
         </p>
-        <p className="product-price"></p>
+        <p className="product-price">10 kr</p>
         <p className="product-text">Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (<NavLink className="product-readmore">read more</NavLink>)</p>
         </div>
         <form className="add-to-cart-form">
             <div className="choose-size">
-            <input type="radio" name="product-size" id="small"></input>
-            <label className="product-size" for="small">S</label>
-            <input type="radio" name="product-size" id="medium"></input>
-            <label className="product-size" for="medium">M</label>
-            <input type="radio" name="product-size" id="large"></input>
-            <label className="product-size" for="large">L</label>
-            <input type="radio" name="product-size" id="x-large"></input>
-            <label className="product-size" for="x-large">XL</label>
+                <p className="choose-size-text">Size:</p>
+                <input type="radio" name="product-size" id="small"></input>
+                <label className="product-size" for="small">S</label>
+                <input type="radio" name="product-size" id="medium"></input>
+                <label className="product-size" for="medium">M</label>
+                <input type="radio" name="product-size" id="large"></input>
+                <label className="product-size" for="large">L</label>
+                <input type="radio" name="product-size" id="x-large"></input>
+                <label className="product-size" for="x-large">XL</label>
             </div>
-            <button type="button" className="color-select">Choose a color <i class="fa-light fa-chevron-down"></i></button>
+            <div className="select-color">
+                <p className="color-text">Color:</p>
+                <button type="button" className="color-select">Choose a color <i className="fa-light fa-chevron-down"></i></button>
+            </div>
             <div className="quantity-submit">
-            <div className="quantity-button">
-                <button className="decrease" type="button"><i class="fa-solid fa-minus"></i></button>
-                <p className="quantity-number">1</p>
-                <button className="increase" type="button"><i class="fa-solid fa-plus"></i></button>
-            </div>
-            <div>
-                <button className="add-to-cart-button" type="submit">ADD TO CART</button>
-            </div>
+                <p className="quantity-text">Qty:</p>
+                <div className="quantity-button">
+                    <button className="decrease" type="button">-</button>
+                    <p className="quantity-number">1</p>
+                    <button className="increase" type="button">+</button>
+                </div>
+                <div>
+                    <button className="add-to-cart-button" type="submit">ADD TO CART</button>
+                </div>
             </div>
         </form>
         </div>

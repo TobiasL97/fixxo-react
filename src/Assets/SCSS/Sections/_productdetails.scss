@@ -80,13 +80,6 @@
         }
 
         .product-detail {
-            display: flex;
-            justify-content: space-between;
-            
-
-            @include sm {
-                justify-content: center;
-            }
 
             @include md {
                 padding: 0 5.5rem;
@@ -175,6 +168,16 @@
                             color: white;
                         }
                     }
+
+                    .choose-size-text {
+                        display: inline;
+                        margin-right: 1.3rem;
+                        font-weight: $font-weight-medium;
+                        
+                        @include lg {
+                            margin-right: 2.25rem;
+                        }
+                    }
         
                     .product-size {
                         position: relative;
@@ -187,64 +190,87 @@
                     }
                 }
 
-                .color-select {
-                    border: 1px solid $color-gray-50;
-                    color: $color-gray-50;
-                    background-color: white;
-                    padding: 0.5rem 0.5rem;
-                    font-size: $font-size-14;
-                    font-weight: $font-weight-regular;
-    
-                    > i {
-                        margin-left: 1rem;
-                        padding-right: 0.5rem;
+                .select-color {
+
+                    .color-text {
+                        display: inline;
+                        margin-right: 0.55rem;
+                        font-weight: $font-weight-medium;
+                        
+                        @include lg {
+                            margin-right: 1.5rem;
+                        }
+                    }
+
+                    .color-select {
+                        border: 1px solid $color-gray-50;
+                        color: $color-gray-50;
+                        background-color: white;
+                        padding: 0.5rem 0.5rem;
+                        font-size: $font-size-14;
+                        font-weight: $font-weight-regular;
+        
+                        > i {
+                            margin-left: 1rem;
+                            padding-right: 0.5rem;
+                        }
                     }
                 }
 
                 .quantity-submit {
+
+                    display: flex;
+                    margin-top: 1rem;
+                    align-items: center;
                     
                     @include lg {
                         display: flex;
                         align-items: center;
                     }
-                    
-                }
 
-                .quantity-button {
-                    display: flex;
-                    align-items: center;
-                    border: 1px solid $color-dark-10;
-                    margin-right: 4rem;
-                    margin-bottom: 1rem;
-                    margin-top: 1rem;
+                    .quantity-text {
+                        margin: 0 1.5rem 0 0;
+                        font-weight: $font-weight-medium;
 
-                    @include lg {
-                        margin-right: 2rem;
-                    }
-
-                    .quantity-number {
-                        padding: 0rem 1rem;
-                        margin: 0;
-                        font-weight: $font-weight-semibold;
-                    }
-
-                    .increase,
-                    .decrease {
-                        border: none;
-                        background-color: white;
-                        padding: 0.5rem 0.5rem;
-
-                        > i {
-                            font-size: $font-size-20;
+                        @include lg {
+                            margin: 0 2.5rem 0 0;
                         }
                     }
+                    
 
-                    .increase {
-                        border-left: 1px solid $color-dark-10;
-                    }
-
-                    .decrease {
-                        border-right: 1px solid $color-dark-10;
+                    .quantity-button {
+                        display: flex;
+                        align-items: center;
+                        border: 1px solid $color-dark-10;
+                        width: max-content;
+                        margin: 0 1rem 0 0;
+    
+                        @include lg {
+                            margin-right: 2rem;
+                        }
+    
+                        .quantity-number {
+                            padding: 0rem 1rem;
+                            margin: 0;
+                            font-weight: $font-weight-semibold;
+                        }
+    
+                        .increase,
+                        .decrease {
+                            border: none;
+                            background-color: white;
+                            padding: 0.5rem 0.5rem;
+                            font-size: $font-size-16;
+                            font-weight: $font-weight-semibold;
+                        }
+    
+                        .increase {
+                            border-left: 1px solid $color-dark-10;
+                        }
+    
+                        .decrease {
+                            border-right: 1px solid $color-dark-10;
+                        }
                     }
                 }
 
@@ -252,9 +278,13 @@
                     color: white;
                     background-color: $color-theme-red;
                     font-weight: $font-weight-semibold;
-                    padding: 0.5rem 2rem;
-                    font-size: $font-size-16;
+                    padding: 0.5rem 1.5rem;
+                    font-size: $font-size-13;
                     border: none;
+
+                    @include sm {
+                        font-size: $font-size-16;
+                    }
                 }
             }
         }

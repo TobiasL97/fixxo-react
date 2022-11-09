@@ -15,8 +15,8 @@ export const ProductProvider = ({children}) => {
     const [twoFor49Products, setTwoFor49Products] = useState([])
     const [saleProducts, setSaleProducts] = useState([])
 
-    const getProduct = async () => {
-        const res = await fetch(url)
+    const getProduct = async (articleNumber) => {
+        const res = await fetch(url + `/${articleNumber}`)
         setProduct(await res.json())
     }
 
