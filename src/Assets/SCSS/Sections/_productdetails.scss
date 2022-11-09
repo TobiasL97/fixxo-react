@@ -75,7 +75,7 @@
             }
 
             .images {
-                border: 1px solid $color-theme-red;
+                background-color: $color-gray-10;
             }
         }
 
@@ -139,6 +139,7 @@
                     font-size: $font-size-13;
                     color: $color-gray-50;
                     display: none;
+                    width: 25rem;
 
                     @include lg {
                         display: block;
@@ -155,7 +156,7 @@
             }
 
             .add-to-cart-form {
-                
+                margin-bottom: 2rem;
 
                 .choose-size {
                     margin-bottom: 1rem;
@@ -285,6 +286,33 @@
                     @include sm {
                         font-size: $font-size-16;
                     }
+                }
+            }
+
+            .share-socialmedia {
+                display: none;
+                align-items: center;
+
+                @include lg {
+                    display: flex;
+                }
+
+                .share-text {
+                    margin: 0;
+                    font-weight: $font-weight-medium;
+                    margin-right: 1rem;
+                }
+
+                .share-socialmedia-links {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $color-dark-20;
+                    margin: 0 0.5rem;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    background-color: #F4F4F4;
                 }
             }
         }

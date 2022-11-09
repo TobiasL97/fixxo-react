@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import ProductDetail from '../Components/ProductDetail'
 import { useProductContext } from '../Contexts/ProductContext'
+import ProductDescription from '../Components/ProductDescription'
 
 
 const ProductDetailsView = () => {
@@ -24,6 +25,7 @@ const ProductDetailsView = () => {
           <p>Get 25% OFF at the Fixxo Selection - <NavLink to="/products" className="shop-now">Shop now!</NavLink></p>
           <BreadCrumb page="/ProductDetailsView" pageName="Product Detail"/>
           <ProductDetail products={product}/>
+          <ProductDescription />
         </div>
       </div>
     </>
