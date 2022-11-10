@@ -6,7 +6,7 @@
 
         margin-bottom: 1rem;
 
-        .description-button {
+        .menu-button {
             border: none;
             border-bottom: 1px solid $color-gray-30;
             padding: 0;
@@ -14,53 +14,20 @@
             margin: 0 1rem 1rem 0;
         }
 
-        .description-headers-active {
-
-            border: none;
+        .button-active {
             border-bottom: 2px solid $color-theme-red;
-            padding: 0;
-            background-color: white;
-            margin: 0 1rem 1rem 0;
-        }
-
-        .additional-button {
-            border: none;
-            border-bottom: 1px solid $color-gray-30;
-            padding: 0;
-            background-color: white;
-            margin: 0 1rem 1rem 0;
-        }
-
-        .additional-button-active {
-            border: none;
-            border-bottom: 2px solid $color-theme-red;
-            padding: 0;
-            background-color: white;
-            margin: 0 1rem 1rem 0;
-        }
-
-        .shopping-return-button {
-            border: none;
-            border-bottom: 1px solid $color-gray-30;
-            padding: 0;
-            background-color: white;
-            margin: 0 1rem 1rem 0;
-        }
-
-        .reviews-button {
-            border: none;
-            border-bottom: 1px solid $color-gray-30;
-            padding: 0;
-            background-color: white;
-            margin: 0 1rem 1rem 0;
         }
     }
     
-    .description-text {
+    .menu-text {
         font-weight: $font-weight-regular;
         color: $color-gray-50;
         font-size: $font-size-13;
         display: none;
+
+        @include lg {
+            font-size: $font-size-16;
+        }
 
         > .active {
             display: block;
@@ -69,10 +36,10 @@
 
     .additional-text {
         display: none;
+    }
 
-        > .active {
-            display: block;
-        }
+    .show-text {
+        display: block;
     }
 
     > .product-grid {
