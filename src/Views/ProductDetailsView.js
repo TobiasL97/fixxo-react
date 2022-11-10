@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom'
 import ProductDetail from '../Components/ProductDetail'
 import { useProductContext } from '../Contexts/ProductContext'
 import ProductDescription from '../Components/ProductDescription'
+import Footer from '../Sections/Footer'
 
 
 const ProductDetailsView = () => {
@@ -27,6 +28,7 @@ const ProductDetailsView = () => {
           <ProductDetail products={product}/>
           <ProductDescription />
         </div>
+        <Footer />
       </div>
     </>
   )

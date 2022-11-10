@@ -135,6 +135,10 @@
                     font-weight: $font-weight-semibold;
                     color: $color-dark-10;
                     margin-bottom: 0.5rem;
+
+                    @include lg {
+                        margin-bottom: 1rem;
+                    }
                 }
     
                 .product-text {
@@ -145,6 +149,8 @@
 
                     @include lg {
                         display: block;
+                        font-size: $font-size-16;
+                        margin-bottom: 1rem;
                     }
     
                     .product-readmore {
@@ -189,6 +195,10 @@
                         padding: 5px 10px;
                         margin-right: 0.5rem;
                         font-weight: $font-weight-medium;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
                         
                     }
                 }
@@ -284,6 +294,12 @@
                     padding: 0.5rem 1.5rem;
                     font-size: $font-size-13;
                     border: none;
+                    transition: 0.2s ease-in-out;
+
+                    &:hover {
+                        background-color: #c45d5d;
+                        color: white;
+                    }
 
                     @include sm {
                         font-size: $font-size-16;
