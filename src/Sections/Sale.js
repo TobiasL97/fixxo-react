@@ -18,7 +18,7 @@ const Sale = () => {
             <div className="sale-text">
                 <h1>Up to 70% off*</h1>
                 <p>Women's, Men's & kids' Winter Fashion</p>
-                <ButtonThemeLight text="FLASH SALE"/>
+                <ButtonThemeLight text="FLASH SALE" link="/products"/>
             </div>
         </div>
 

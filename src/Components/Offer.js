@@ -6,7 +6,7 @@ const Offer = ({OfferText}) => {
     <div className="offer">
         <div className="offer-content">
             <h1>{OfferText}</h1>
-            <ButtonThemeLight text="FLASH SALE" />
+            <ButtonThemeLight text="FLASH SALE" link="/products"/>
         </div>
     </div>
   )
