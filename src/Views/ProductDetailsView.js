@@ -7,15 +7,17 @@ import ProductDetail from '../Components/ProductDetail'
 import { useProductContext } from '../Contexts/ProductContext'
 import ProductDescription from '../Components/ProductDescription'
 import Footer from '../Sections/Footer'
+import ProductGrid from '../Sections/ProductGrid'
 
 
 const ProductDetailsView = () => {
 
   const {id} = useParams()
-  const {product, getProduct} = useProductContext()
+  const {product, getProduct, relatedProducts, getRelatedProducts} = useProductContext()
 
   useEffect(() => {
     getProduct(id)
+    getRelatedProducts(4)
   }, [])
 
   return (
@@ -27,6 +29,7 @@ const ProductDetailsView = () => {
           <BreadCrumb page="/ProductDetailsView" pageName="Product Detail"/>
           <ProductDetail products={product}/>
           <ProductDescription />
+          <ProductGrid title="Related Products" products={relatedProducts}/>
         </div>
         <Footer />
       </div>

@@ -1,15 +1,6 @@
 import React, { useState } from 'react'
-import { useProductContext } from '../Contexts/ProductContext'
-import { useEffect } from 'react'
-import ProductGrid from '../Sections/ProductGrid'
 
 const ProductDescription = () => {
-
-    const { relatedProducts, getRelatedProducts} = useProductContext()
-
-    useEffect(() => {
-        getRelatedProducts(4)
-      }, [])
 
       const [descriptionMenu, setDescriptionMenu] = useState(true)
 
@@ -49,9 +40,9 @@ const ProductDescription = () => {
       
 
   return (
-    <div className="product-description">
+    <div  className="product-description">
         <div className="description-buttons">
-            <button onClick={toggleDescriptionMenu} className={`menu-button${!descriptionMenu ? ' button-active': ''}`}>Description</button>
+            <button onClick={toggleDescriptionMenu} data-testid="descriptionButton" className={`menu-button${!descriptionMenu ? ' button-active': ''}`}>Description</button>
             <button onClick={toggleAdditionalMenu} className={`menu-button${!additionalMenu ? ' button-active': ''}`}>Additional</button>
             <button onClick={toggleShoppingReturnMenu}className={`menu-button${!shoppingReturn ? ' button-active': ''}`}>Shopping & Returns</button>
             <button onClick={toggleReviewMenu} className={`menu-button${!reviews ? ' button-active': ''}`}>Reviews</button>
@@ -72,7 +63,6 @@ const ProductDescription = () => {
         <div  className={`menu-text${!reviews ? ' show-text': ''}`}>
             <p>Reviews</p>
         </div>
-        <ProductGrid title="Related Products" products={relatedProducts}/>
     </div>
   )
 }

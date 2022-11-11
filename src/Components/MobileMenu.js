@@ -15,7 +15,7 @@ const MobileMenu = () => {
   }
   return (
     <div className="Mobile-Menu">
-        <div onClick={toggleMenu} className={`hamburger-icon ${!showMenu ? "is-active": ""}`}>
+        <div onClick={toggleMenu} data-testid="hamburgerIcon" className={`hamburger-icon ${!showMenu ? "is-active": ""}`}>
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
