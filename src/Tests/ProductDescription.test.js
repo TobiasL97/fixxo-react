@@ -12,7 +12,7 @@ describe(ProductDescription, () => {
         const value = getByTestId('descriptionButton')
 
 
-        expect(value).toHaveClass('menu-button button-active', {exact: true})
+        expect(value).toHaveClass(' button-active')
 
     }) 
 })
