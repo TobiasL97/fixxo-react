@@ -6,12 +6,12 @@ const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(true)
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu)
+    setShowMenu(!showMenu)    //Öppna och stäng hamburger-menu
   }
 
   const closeMenu = () => {
     setShowMenu(false)
-    window.scrollTo({top:0, behavior: 'instant'})
+    window.scrollTo({top:0, behavior: 'instant'}) //Navigera till vald sida och stäng hamburger-menu
   }
   return (
     <div className="Mobile-Menu">

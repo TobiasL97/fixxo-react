@@ -12,7 +12,7 @@ describe(ProductDescription, () => {
         const value = getByTestId('descriptionButton')
 
 
-        expect(value).toHaveClass(' button-active')
+        expect(value).toHaveClass(' button-active')    //Får inte mitt test att fungera
 
     }) 
 })

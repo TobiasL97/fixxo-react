@@ -4,14 +4,16 @@ const ProductDescription = () => {
 
       const [descriptionMenu, setDescriptionMenu] = useState(true)
 
-      const toggleDescriptionMenu = () => {
+      //När vald knapp är aktiverad så ska meny till vald knapp dyka upp och knappen ska få en röd linje under sig
+
+      const toggleDescriptionMenu = () => {  //Description knapp
         setAdditionalMenu(true)
         setShoppingReturn(true)
         setReviews(true)
         setDescriptionMenu(!descriptionMenu)
       }
 
-      const [additionalMenu, setAdditionalMenu] = useState(true)
+      const [additionalMenu, setAdditionalMenu] = useState(true) //Additional meny knapp
 
       const toggleAdditionalMenu = () => {
         setDescriptionMenu(true)
@@ -20,7 +22,7 @@ const ProductDescription = () => {
         setAdditionalMenu(!additionalMenu)
       }
 
-      const [shoppingReturn, setShoppingReturn] = useState(true)
+      const [shoppingReturn, setShoppingReturn] = useState(true) //Shopping & returns knapp
 
       const toggleShoppingReturnMenu = () => {
         setDescriptionMenu(true)
@@ -29,7 +31,7 @@ const ProductDescription = () => {
         setShoppingReturn(!shoppingReturn)
       }
 
-      const [reviews, setReviews] = useState(true)
+      const [reviews, setReviews] = useState(true) //Reviews knapp
 
       const toggleReviewMenu = () => {
         setDescriptionMenu(true)
